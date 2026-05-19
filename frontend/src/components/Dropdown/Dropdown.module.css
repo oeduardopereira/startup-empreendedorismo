@@ -1,0 +1,15 @@
+.drop {
+    @apply bg-bg-mid border-bg border-2 rounded-[12px] w-[500px] max-sm:w-[320px] h-[35px] outline-none
+    transition-all duration-100 ease-in-out hover:border-bg-light
+    px-2 focus:border-white focus:bg-bg flex items-center
+}
+
+.options {
+    @apply bg-bg-mid rounded-[12px] w-[500px] max-sm:w-[320px] border-solid border-2 border-bg-light
+    py-2 max-sm:py-0
+}
+
+.listopt {
+    @apply text-txt px-5 border-solid border-l-[2px] rounded-[2px] border-bg-mid
+    hover:border-white hover:bg-bg transition-all duration-150 ease-in-out
+}

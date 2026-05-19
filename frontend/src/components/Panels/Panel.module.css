@@ -1,0 +1,52 @@
+
+.panel {
+    @apply min-w-[100px] min-h-[200px] w-[300px] h-[350px] max-sm:h-[200px] rounded-2xl px-3 py-2 text-light
+    border border-bg-light border-solid
+    transition-all delay-75 duration-200 ease-in-out hover:bg-bg-mid
+    hover:translate-y-[-0.1rem] hover:border-white 
+}
+
+.dgraph {
+    @apply w-full h-full rounded-2xl px-3 py-2 text-light
+    border border-bg-light border-solid
+    transition-all delay-75 duration-200 ease-in-out
+    hover:translate-y-[-0.1rem] hover:border-white 
+}
+
+.pgraph {
+    @apply w-full h-full rounded-2xl px-3 py-2 text-light
+    border border-bg-light border-solid
+    transition-all delay-75 duration-200 ease-in-out
+    hover:translate-y-[-0.1rem] hover:border-white 
+}
+
+.lgraph {
+    @apply w-full h-full rounded-2xl px-3 py-2 text-light
+    border border-bg-light border-solid
+    transition-all delay-75 duration-200 ease-in-out
+    hover:translate-y-[-0.1rem] hover:border-white 
+}
+
+.table {
+    @apply min-w-[300px] min-h-[350px] w-[630px] h-[500px] max-sm:w-[350px] max-sm:h-[350px] rounded-2xl px-3 py-2 text-light
+    border border-bg-light border-solid overflow-auto
+    transition-all delay-75 duration-200 ease-in-out
+    hover:translate-y-[-0.1rem] hover:border-white 
+}
+
+.itemrow {
+    @apply flex space-x-5 max-sm:space-x-2 w-full h-[50px] max-sm:h-[35px] items-center rounded-[10px]
+    transition-all delay-[5] duration-100 hover:bg-bg-mid
+}
+
+.item {
+    @apply w-[100px] truncate items-center text-center justify-center flex max-sm:text-[12px]
+}
+
+.header {
+    @apply w-[100px] truncate items-center text-center font-bold max-sm:text-[10px]
+}
+
+.icons {
+    @apply w-[30px]
+}
