@@ -1,0 +1,8 @@
+.container {
+    @apply bg-none w-full h-[100vh] rounded-[15px] flex-col px-3 py-3
+    space-y-10
+}
+
+.row {
+    @apply bg-none w-full h-fit flex space-x-1
+}

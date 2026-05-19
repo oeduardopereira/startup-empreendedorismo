@@ -1,0 +1,65 @@
+.expense {
+    @apply bg-bg-mid w-[600px] max-sm:w-[350px] h-[400px] absolute top-1/2 left-1/2 -translate-x-[175px]
+    -translate-y-[200px] border-[2px] border-white rounded-[12px] px-5 py-5 flex flex-col
+    space-y-5 shadow-2xl
+}
+
+.row {
+    @apply flex items-center space-x-5
+}
+
+.icone {
+    @apply w-[64px] max-sm:w-[44px]
+}
+
+.text {
+    @apply text-txt text-[18px] max-sm:text-[14px] w-fit
+}
+
+.header {
+    @apply text-txt font-bold text-[18px] max-sm:text-[14px]
+}
+
+.confirmButton {
+    @apply border-[#33ff00] border-2 w-[150px] h-[40px] rounded-[8px] flex items-center
+    justify-center space-x-2 text-[#33ff00] transition-all delay-75 duration-100
+    hover:bg-[#33ff00] hover:text-txt active:opacity-50  max-sm:text-[14px] max-sm:space-x-1
+}
+
+.editButton {
+    @apply border-[#1c71d8] border-2 w-[150px] h-[40px] rounded-[8px] flex items-center
+    justify-center space-x-4 text-[#1c71d8] transition-all delay-75 duration-100
+    hover:bg-[#1c71d8] hover:text-txt active:opacity-50 max-sm:text-[14px]
+}
+
+.denyButton {
+    @apply border-[#ff0000] border-2 w-[150px] h-[40px] rounded-[8px] flex items-center
+    justify-center space-x-2 text-[#ff0000] transition-all delay-75 duration-100
+    hover:bg-[#ff0000] hover:text-txt active:opacity-50 max-sm:text-[14px] max-sm:space-x-1
+}
+
+.form {
+    @apply bg-bg-mid w-[1200px] max-sm:w-[350px] h-fit border-[2px] border-white rounded-[12px] px-5 py-5 flex flex-col
+    space-y-5 shadow-2xl
+}
+
+.input {
+    @apply bg-bg-mid border-bg border-2 rounded-[12px] w-[500px] h-[35px] outline-none
+    transition-all duration-100 ease-in-out hover:border-bg-light text-txt
+    px-2 focus:border-white focus:bg-bg max-sm:w-[320px] max-sm:text-[14px]
+}
+
+.txtarea {
+    @apply bg-bg-mid border-bg border-2 rounded-[12px] w-[500px] h-[350px] outline-none
+    transition-all duration-100 ease-in-out hover:border-bg-light text-txt
+    px-2 py-1 focus:border-white focus:bg-bg resize-none
+}
+
+.send {
+    @apply w-[350px] h-[200px] bg-blue-600 border-2 border-blue-600 rounded-[12px]
+    mt-[60px] text-txt font-bold text-[32px]
+    transition-all delay-[15] duration-150 ease-in-out 
+    hover:bg-transparent hover:-translate-y-2 max-sm:w-[200px] max-sm:h-[150px]
+    max-sm:mt-[30px]
+}
+

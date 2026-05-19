@@ -1,0 +1,27 @@
+.input {
+    @apply bg-bg border-bg border-2 rounded-[12px] max-sm:w-[320px] w-[500px] h-[50px] outline-none
+    transition-all duration-100 ease-in-out hover:border-bg-light text-txt font-semibold
+    text-[22px] max-sm:text-[14px] text-center
+    px-2 focus:border-white focus:bg-bg-light
+}
+
+.button {
+    @apply max-sm:w-[250px] w-[300px] h-[50px] bg-blue-600 border-2 border-blue-600 rounded-[12px] text-txt font-bold text-[32px]
+    transition-all delay-[15] duration-150 ease-in-out 
+    hover:bg-transparent hover:-translate-y-2
+}
+
+.passInput {
+    @apply bg-bg border-bg border-2 rounded-l-[12px] max-sm:w-[270px] w-[450px] h-[50px] outline-none
+    transition-all duration-100 ease-in-out hover:border-bg-light text-txt font-semibold
+    text-[22px] max-sm:text-[14px] text-center
+    px-2 focus:border-white focus:bg-bg-light
+}
+
+.open {
+    @apply max-sm:w-[50px] w-[50px] bg-bg-mid rounded-r-[12px] border-bg border-2 hover:border-bg-light
+}
+
+.closed {
+    @apply max-sm:w-[50px] w-[50px] bg-bg-light rounded-r-[12px] border-bg border-2 hover:border-bg-light
+}
