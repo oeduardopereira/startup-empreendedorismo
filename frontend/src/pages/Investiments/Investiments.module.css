@@ -1,6 +1,6 @@
 @reference "../../index.css";
 
 .page {
-    @apply bg-bg-blue h-screen w-full
+    @apply bg-bg-blue h-full w-full flex-col
 }
 

@@ -7,10 +7,10 @@ function App() {
     return(
 
         <>
-            <div className="flex">
+            <div className="flex scrollbar-none overflow-hidden">
                 <Navbar />
-                <div className="flex-col">
-                    <div className="w-screen">
+                <div className="flex-col w-[85%]">
+                    <div className="w-full">
                         <Topbar />
                     </div>
                     <Investiments />
