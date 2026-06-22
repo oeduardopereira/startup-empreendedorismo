@@ -1,6 +1,20 @@
-@import url('https://fonts.googleapis.com');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
+@theme {
+    --color-bg: #BFFCFF;
+    --color-bg-mid: #A6EFF3;
+    --color-bg-dark: #8AD3D7;
+    --color-main-green: #14696D;
+    --color-dark-green: #003739;
+    --color-light-green: #539CA0;
+    --color-main-blue: #666FCA;
+    --color-light-blue: #9BA4FF;
+    --color-sec-main-green: #53A252;
+    --color-sec-light-green: #A3F69C;
+    --color-sec-dark-green: #005312;
+    --color-bg-blue: #F1EFFF;
+
+    --font-mt: "Montserrat";
+}
 

@@ -1,9 +1,16 @@
+import Investiments from "./pages/Investiments/Investiments";
 
 function App() {
 
     return(
 
-        <h1>Projeto empreendedorismo</h1>
+        <>
+            <div>
+                <Investiments />
+            </div>
+            
+        
+        </>
 
     );
 
