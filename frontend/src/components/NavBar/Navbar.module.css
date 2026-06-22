@@ -1,7 +1,7 @@
 @reference "../../index.css";
 
 .navbar {
-    @apply bg-dark-green w-[250px] h-screen shadow-2xl;
+    @apply bg-dark-green w-[220px] h-screen shadow-2xl;
 }
 
 .title {
