@@ -4,6 +4,7 @@ import api from "../axios.ts";
 export async function checkFamily(familyName: string) {
     try {
         const response = await api.get(`/v1/family/check/${familyName}`);
+        console.log("Sent")
         return response.data.id;
     } catch {
         console.log("Erro na checagem de famílias.")
