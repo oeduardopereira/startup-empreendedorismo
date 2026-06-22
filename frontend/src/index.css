@@ -4,6 +4,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    @apply bg-bg flex flex-col font-mt min-h-screen
-}
