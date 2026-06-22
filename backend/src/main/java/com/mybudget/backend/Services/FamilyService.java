@@ -37,11 +37,11 @@ public class FamilyService {
 
     public UUID createFamily(CreateFamilyDTO createFamilyDTO) {
 
-        var family = new Family(
-            createFamilyDTO.name(),
-            0,
-            new ArrayList<Account>()
-        );
+        var family = Family.builder()
+                .name(createFamilyDTO.name())
+                .balance(0)
+                .relatives(new ArrayList<>())
+                .build();
 
         var savedFamily = familyRepository.save(family);
 
@@ -84,11 +84,11 @@ public class FamilyService {
             var family = familyRepository.findFamilyByName(familyName).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
             return family;
         } else {
-            var newFamily = new Family(
-                familyName,
-                0,
-                new ArrayList<Account>()
-            );
+            var newFamily = Family.builder()
+                    .name(familyName)
+                    .balance(0)
+                    .relatives(new ArrayList<Account>())
+                    .build();
 
             var family = familyRepository.save(newFamily);
             return family;

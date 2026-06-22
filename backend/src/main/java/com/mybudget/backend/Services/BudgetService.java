@@ -37,13 +37,13 @@ public class BudgetService {
             type = BudgetType.GAIN;
         }
 
-        var budget = new Budget(
-            addBudgetDTO.description(),
-            type,
-            Frequency.valueOf(addBudgetDTO.frequency()),
-            value,
-            account
-        );
+        var budget = Budget.builder()
+                        .description(addBudgetDTO.description())
+                .type(type)
+                        .frequency(Frequency.valueOf(addBudgetDTO.frequency()))
+                .value(value)
+                .author(account).build();
+
 
         var saved_budget = budgetRepository.save(budget);
 

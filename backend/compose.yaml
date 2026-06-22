@@ -2,13 +2,16 @@ services:
   postgres:
     image: 'postgres:latest'
     environment:
-      - 'POSTGRES_DB=mybudget-db'
-      - 'POSTGRES_PASSWORD=2231M6a3rb#'
-      - 'POSTGRES_ROOT_PASSWORD=Oscar2387/*-/Papa1445/*-/'
-      - 'POSTGRES_USER=api'
+      - POSTGRES_DB=mybudget-db
+      - POSTGRES_PASSWORD=senha
+      - POSTGRES_ROOT_PASSWORD=Oscar2387/*-/Papa1445/*-/
+      - POSTGRES_USER=api
     ports:
-      - '5432:5432'
+      - 5432:5432
     expose:
-      - '5432'
+      - 5432
     volumes:
-      - './mybudget_data:/var/lib/postgresql/data'
+      - mybudget_data:/var/lib/postgresql/
+
+volumes:
+  mybudget_data:

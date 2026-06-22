@@ -44,14 +44,13 @@ public class AccountService {
 
         String encPass = passwordEncoder.encode(accountDTO.password());
 
-        var account = new Account(
-            accountDTO.username(),
-            accountDTO.email(),
-            encPass,
-            0,
-            family,
-            new ArrayList<Budget>()
-        );
+        var account = Account.builder()
+                .username(accountDTO.username())
+                .email(accountDTO.email())
+                .password(encPass)
+                .balance(0)
+                .family(family)
+                .budgets(new ArrayList<Budget>()).build();
 
         var savedAccount = accountRepository.save(account);
         var id = savedAccount.getId();

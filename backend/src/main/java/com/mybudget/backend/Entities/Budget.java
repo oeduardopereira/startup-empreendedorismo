@@ -3,12 +3,18 @@ package com.mybudget.backend.Entities;
 import com.mybudget.backend.Enums.BudgetType;
 import com.mybudget.backend.Enums.Frequency;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.Instant;
 import java.util.UUID;
 
 @Entity
 @Table(name = "tb_budgets")
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Budget {
 
     @Id
@@ -40,70 +46,4 @@ public class Budget {
     @PrimaryKeyJoinColumn
     @JoinColumn(name = "budget_author")
     private Account author;
-
-    public Budget() {}
-
-    public Budget(String description, BudgetType type, Frequency frequency, int value, Account author) {
-        this.description = description;
-        this.type = type;
-        this.frequency = frequency;
-        this.value = value;
-        this.author = author;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public BudgetType getType() {
-        return type;
-    }
-
-    public Frequency getFrequency() {
-        return frequency;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public Instant getDate() {
-        return date;
-    }
-
-    public Account getAuthor() {
-        return author;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setType(BudgetType type) {
-        this.type = type;
-    }
-
-    public void setFrequency(Frequency frequency) {
-        this.frequency = frequency;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public void setDate(Instant date) {
-        this.date = date;
-    }
-
-    public void setAuthor(Account author) {
-        this.author = author;
-    }
 }

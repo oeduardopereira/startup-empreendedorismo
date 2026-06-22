@@ -1,6 +1,7 @@
 package com.mybudget.backend.Entities;
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +13,11 @@ import java.util.UUID;
 
 @Entity
 @Table(name="tb_accounts")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class Account implements UserDetails{
 
     @Id
@@ -42,90 +48,12 @@ public class Account implements UserDetails{
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private List<Budget> budgets;
 
-    public Account() {}
-
-    public Account(String username, String email, String password, int balance, Family family, List<Budget> budgets) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.family = family;
-        this.balance = balance;
-        this.budgets = budgets;
-        this.spentPerMonth = new ArrayList<>();
-        for (int i = 0; i < 12; i++) {
-            spentPerMonth.add(0);
-        }
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getName() {
-        return username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPass() {
-        return password;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public List<Integer> getSpentPerMonth() {
-        return spentPerMonth;
-    }
-
-    public Family getFamily() {
-        return family;
-    }
-
-    public List<Budget> getBudgets() {
-        return budgets;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
-
-    public void setSpentPerMonth(List<Integer> spentPerMonth) {
-        this.spentPerMonth = spentPerMonth;
-    }
-
-    public void setFamily(Family family) {
-        this.family = family;
-    }
-
-    public void setBudgets(List<Budget> budgets) {
-        this.budgets = budgets;
-    }
-
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
+
+    public String getName() { return this.username; }
 
     @Override
     public String getPassword() {

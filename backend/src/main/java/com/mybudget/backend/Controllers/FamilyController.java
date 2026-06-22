@@ -61,7 +61,7 @@ public class FamilyController {
     @GetMapping("/check/{family_name}")
     public ResponseEntity<GetFamilyDTO> getFamilyByName(@PathVariable("family_name") String familyName) {
         var family = familyService.getFamilyByName(familyName);
-
+        System.out.println("Checou família.");
         var responseDTO = new GetFamilyDTO(family);
         return ResponseEntity.ok(responseDTO);
     }
