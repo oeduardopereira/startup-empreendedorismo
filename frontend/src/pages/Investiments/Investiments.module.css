@@ -1,5 +1,6 @@
 @reference "../../index.css";
 
 .page {
-    @apply bg-bg-blue h-screen w-screen
+    @apply bg-bg-blue h-screen w-full
 }
+

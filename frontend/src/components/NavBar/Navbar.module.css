@@ -1,0 +1,19 @@
+@reference "../../index.css";
+
+.navbar {
+    @apply bg-dark-green w-[250px] h-screen shadow-2xl;
+}
+
+.title {
+    @apply text-white font-bold text-[32px] text-center w-full h-fit mt-[15px];
+}
+
+.pagelist {
+    @apply space-y-[20px] w-full justify-center;
+}
+
+.pagebutton {
+    @apply text-light-green font-semibold flex rounded-[16px] w-[180px] h-[48px]
+    text-center items-center justify-center cursor-pointer space-x-2
+    hover:bg-main-green transition-all duration-100
+}
