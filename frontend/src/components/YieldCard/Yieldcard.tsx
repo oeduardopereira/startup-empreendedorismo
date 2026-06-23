@@ -27,6 +27,11 @@ function Yieldcard() {
                     {brlFormatter.format(current)}
                 </p>
             </div>
+            <div className="flex items-center justify-center mt-1">
+                <p className="font-extralight text-dark-green text-[20px]">
+                    Meta: {brlFormatter.format(goal)}
+                </p>
+            </div>
             <div className="flex items-center justify-center mt-4">
                 <div className="w-[80%] h-[10px] rounded-[16px] flex">
                     <div className={`bg-light-blue h-full rounded-l-[16px]`} style={{width: `${percentage}%`}}/>
