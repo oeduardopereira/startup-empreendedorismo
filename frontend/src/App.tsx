@@ -7,7 +7,7 @@ function App() {
     return(
 
         <>
-            <div className="flex scrollbar-none overflow-hidden">
+            <div className="flex bg-bg-blue overflow-hidden">
                 <Navbar />
                 <div className="flex-col w-[85%]">
                     <div className="w-full">

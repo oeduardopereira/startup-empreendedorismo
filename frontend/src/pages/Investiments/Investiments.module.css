@@ -1,7 +1,7 @@
 @reference "../../index.css";
 
 .page {
-    @apply bg-bg-blue h-full w-full flex-col p-5
+    @apply bg-bg-blue h-full w-full flex-col p-5 overflow-auto
 }
 
 .title {
