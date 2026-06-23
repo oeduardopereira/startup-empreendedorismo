@@ -19,15 +19,16 @@ function Investiments() {
                     <Goalcard />
                 </div>
                 <div className="flex w-full py-2 h-fit space-x-5 items-center justify-center">
-                    <div className="bg-white w-[400px] h-[300px] shadow-md rounded-[16px] flex-col p-3">
+                    <div className="bg-white w-[800px] h-[500px] shadow-md rounded-[16px] flex-col p-3 hover:-translate-y-2 transition-all duration-75">
                         <div className="flex items-center justify-between">
-                            <h1 className="text-dark-green font-bold text-[20px]">Investimentos x Despesas</h1>
+                            <h1 className="text-dark-green font-bold text-[32px]">Investimentos x Despesas</h1>
                         </div>
                         <div className="flex w-full h-full items-center justify-between">
                             <Linechart />
                         </div>
                     </div>
-                    <div className="bg-white w-[250px] h-[300px] shadow-md rounded-[16px] flex-col p-3 space-y-2 overflow-auto scrollbar-none">
+                    <div className="bg-white w-[450px] h-[500px] shadow-md rounded-[16px] flex-col p-3 space-y-2 overflow-auto scrollbar-none
+                                    hover:-translate-y-2 transition-all duration-75">
                         <div className="flex items-center justify-between">
                             <div className="text-dark-green  w-[40px] h-[40px] flex items-center justify-center bg-green-100 rounded-[20px]">
                                 <MdDataSaverOff />

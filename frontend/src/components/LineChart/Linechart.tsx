@@ -28,10 +28,10 @@ ChartJS.register(
 function Linechart() {
 
     const data: ChartData<"line", number[], string> = {
-            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
             datasets: [
-                {label: "Investimentos", data: [150, 200, 50, 0, 500, 150], fill: false, tension: 0.2, borderColor: '#14696D'},
-                {label: "Gastos", data: [2000, 1800, 2100, 2150, 1500, 2000], fill: false, tension: 0.2, borderColor: '#EF0000'}
+                {label: "Investimentos", data: [150, 200, 50, 0, 500, 150, 0, 0, 0, 0, 0, 0], fill: false, tension: 0.2, borderColor: '#14696D'},
+                {label: "Gastos", data: [2000, 1800, 2100, 2150, 1500, 2000, 0, 0, 0, 0, 0, 0], fill: false, tension: 0.2, borderColor: '#EF0000'}
             ]
         }
 

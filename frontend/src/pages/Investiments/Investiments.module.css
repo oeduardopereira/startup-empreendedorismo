@@ -5,9 +5,9 @@
 }
 
 .title {
-    @apply text-dark-green font-bold text-[24px]
+    @apply text-dark-green font-bold text-[32px]
 }
 
 .subtitle {
-    @apply text-dark-green text-[18px] font-extralight
+    @apply text-dark-green text-[24px] font-extralight
 }

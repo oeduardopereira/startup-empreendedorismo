@@ -1,5 +1,6 @@
 @reference "../../index.css";
 
 .card {
-    @apply bg-white w-[200px] min-h-[150px] rounded-[16px] shadow-md p-3 flex-col
+    @apply bg-white w-[300px] min-h-[200px] rounded-[16px] shadow-md p-3 flex-col
+    hover:-translate-y-2 transition-all duration-75
 }
