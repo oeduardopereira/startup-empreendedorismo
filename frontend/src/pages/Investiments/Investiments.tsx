@@ -30,10 +30,12 @@ function Investiments() {
                     <div className="bg-white w-[450px] h-[500px] shadow-md rounded-[16px] flex-col p-3 space-y-2 overflow-auto scrollbar-none
                                     hover:-translate-y-2 transition-all duration-75">
                         <div className="flex items-center justify-between">
-                            <div className="text-dark-green  w-[40px] h-[40px] flex items-center justify-center bg-green-100 rounded-[20px]">
-                                <MdDataSaverOff />
+                            <div className="text-dark-green  w-[60px] h-[60px] flex items-center justify-center bg-green-100 rounded-[30px]">
+                                <div className="scale-[170%]">
+                                    <MdDataSaverOff />
+                                </div>
                             </div>
-                            <h1 className="text-dark-green font-bold text-[20px]">Métricas</h1>
+                            <h1 className="text-dark-green font-bold text-[32px]">Métricas</h1>
                         </div>
                         <div className="text-dark-green font-light text-[18px] bg-light-green rounded-[16px] p-3">
                             Maio foi o mês com menor gasto!
