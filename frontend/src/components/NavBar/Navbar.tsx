@@ -11,8 +11,8 @@ function Navbar() {
 
     const PAGES: pages[] = [
         {name: "Home", path: "../../pages/Home/Home.tsx", icon: "FiInfo"},
-        {name: "Finances", path: "../../pages/Finances/Finances.tsx", icon: "FiShoppingBag"},
-        {name: "Investiments", path: "../../pages/Investiments/Investiments.tsx", icon: "FiTrendingUp"},
+        {name: "Finâncias", path: "../../pages/Finances/Finances.tsx", icon: "FiShoppingBag"},
+        {name: "Investimentos", path: "../../pages/Investiments/Investiments.tsx", icon: "FiTrendingUp"},
     ]
 
     return(

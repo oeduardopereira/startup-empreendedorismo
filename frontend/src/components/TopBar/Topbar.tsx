@@ -9,7 +9,7 @@ function Topbar() {
 
         <div  className={styles.topbar}>
             <div className="flex pl-[70px] w-[80%] space-x-[10px]">
-                <input className={styles.searchbar} placeholder="Global search for budgets, goals, clients" />
+                <input className={styles.searchbar} placeholder="Pesquisa global de finâncias, clientes e metas" />
                 <button className={styles.searchbutton}>
                     <FiSearch />
                 </button>

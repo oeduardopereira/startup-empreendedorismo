@@ -1,0 +1,5 @@
+@reference "../../index.css";
+
+.card {
+    @apply bg-white w-[200px] min-h-[150px] rounded-[16px] shadow-md p-3 flex-col
+}
