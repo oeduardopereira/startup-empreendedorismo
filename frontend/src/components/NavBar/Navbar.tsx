@@ -1,4 +1,5 @@
 import { FiInfo, FiShoppingBag, FiTrendingUp } from "react-icons/fi";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css"
 
 type pages = {
@@ -8,16 +9,17 @@ type pages = {
 }
 
 function Navbar() {
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const PAGES: pages[] = [
-        {name: "Home", path: "../../pages/Home/Home.tsx", icon: "FiInfo"},
-        {name: "Finâncias", path: "../../pages/Finances/Finances.tsx", icon: "FiShoppingBag"},
-        {name: "Investimentos", path: "../../pages/Investiments/Investiments.tsx", icon: "FiTrendingUp"},
+        {name: "Home", path: "/home", icon: "FiInfo"},
+        {name: "Finâncias", path: "/financas", icon: "FiShoppingBag"},
+        {name: "Investimentos", path: "/investimentos", icon: "FiTrendingUp"},
     ]
 
     return(
         <>
-        
             <div className={styles.navbar}>
                 <div className={styles.title}>
                     [NOME]
@@ -25,8 +27,15 @@ function Navbar() {
                 <div className="mt-10">
                     <ul className={styles.pagelist}>
                         {PAGES.map((page) => (
-                            <li className="flex items-center justify-center">
-                                <button className={styles.pagebutton}>
+                            <li key={page.path} className="flex items-center justify-center">
+                                <button
+                                    className={styles.pagebutton}
+                                    onClick={() => navigate(page.path)}
+                                    style={location.pathname === page.path
+                                        ? { opacity: 1, fontWeight: "bold" }
+                                        : { opacity: 0.6 }
+                                    }
+                                >
                                     {page.icon === "FiInfo" ? (
                                         <FiInfo />
                                     ) : page.icon === "FiShoppingBag" ? (
@@ -41,10 +50,8 @@ function Navbar() {
                     </ul>
                 </div>
             </div>
-        
         </>
     );
-
 }
 
 export default Navbar;
