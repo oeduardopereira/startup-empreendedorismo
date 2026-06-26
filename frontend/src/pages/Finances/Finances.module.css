@@ -1,0 +1,13 @@
+@reference "../../index.css";
+
+.page {
+    @apply bg-bg-blue h-full w-full flex-col p-5 overflow-auto
+}
+
+.title {
+    @apply text-dark-green font-bold text-[32px]
+}
+
+.subtitle {
+    @apply text-dark-green text-[24px] font-extralight
+}

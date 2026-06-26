@@ -15,5 +15,9 @@
 .pagebutton {
     @apply text-light-green font-semibold flex rounded-[16px] w-[80%] h-[48px]
     text-center items-center justify-center cursor-pointer space-x-2
-    hover:bg-main-green transition-all duration-100
+    hover:bg-main-green transition-all duration-100;
+}
+
+.active {
+    @apply bg-main-green;
 }
