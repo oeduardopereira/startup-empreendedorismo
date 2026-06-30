@@ -5,8 +5,8 @@ import { FaShoppingCart, FaBolt, FaMoneyBillWave, FaHeartbeat, FaCar, FaHome } f
 import BudgetCard from "../../components/BudgetCard/BudgetCard";
 import GoalProgressCard from "../../components/GoalProgressCard/GoalProgressCard";
 import Barchart from "../../components/BarChart/Barchart";
+import Modal from "../../components/Modal/Modal";
 import styles from "./Finances.module.css";
-
 
 type Transaction = {
     category: string;
@@ -17,7 +17,7 @@ type Transaction = {
     amount: number;
 };
 
-const transactions: Transaction[] = [
+const initialTransactions: Transaction[] = [
     { category: "Alimentação",  icon: <FaShoppingCart />,  merchant: "Mercado Extra",         date: "24 Out, 2024", status: "VERIFICADO", amount: -184.50  },
     { category: "Utilidades",   icon: <FaBolt />,           merchant: "Enel Energia",           date: "22 Out, 2024", status: "PENDENTE",   amount: -312.00  },
     { category: "Renda",        icon: <FaMoneyBillWave />,  merchant: "Tech Solutions Ltda.",   date: "20 Out, 2024", status: "VERIFICADO", amount: +5800.00 },
@@ -27,7 +27,41 @@ const transactions: Transaction[] = [
 ];
 
 function Finances() {
+    const [transactions, setTransactions] = React.useState<Transaction[]>(initialTransactions);
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
     const brlFormatter = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
+
+    const getIconForCategory = (category: string): React.ReactElement => {
+        switch (category.toLowerCase()) {
+            case "alimentação":
+                return <FaShoppingCart />;
+            case "utilidades":
+                return <FaBolt />;
+            case "renda":
+                return <FaMoneyBillWave />;
+            case "saúde":
+                return <FaHeartbeat />;
+            case "transporte":
+                return <FaCar />;
+            case "moradia":
+                return <FaHome />;
+            default:
+                return <FaShoppingCart />;
+        }
+    };
+
+    const handleAddTransaction = (data: any) => {
+        const newTransaction: Transaction = {
+            category: data.category,
+            icon: getIconForCategory(data.category),
+            merchant: data.merchant,
+            date: data.date,
+            status: data.status,
+            amount: data.amount,
+        };
+        setTransactions([newTransaction, ...transactions]);
+        setIsModalOpen(false);
+    };
 
     return (
         <div className={styles.page}>
@@ -36,7 +70,7 @@ function Finances() {
 
             {/* Row 1 — Budget cards */}
             <div className="flex w-full py-4 h-fit space-x-5 items-center justify-center">
-                <BudgetCard />
+                <BudgetCard transactions={transactions} />
                 <GoalProgressCard
                     label="Novo SUV Familiar"
                     icon="🚗"
@@ -68,7 +102,7 @@ function Finances() {
                         <h1 className="text-dark-green font-bold text-[32px]">Receitas x Despesas</h1>
                     </div>
                     <div className="flex w-full h-full items-center justify-between">
-                        <Barchart />
+                        <Barchart transactions={transactions} />
                     </div>
                 </div>
 
@@ -103,7 +137,10 @@ function Finances() {
                     <div className="flex items-center justify-between mb-4">
                         <h1 className="text-dark-green font-bold text-[32px]">Fluxo Doméstico</h1>
                         <div className="flex space-x-3">
-                            <button className="flex items-center space-x-1 bg-dark-green text-white font-medium px-4 py-2 rounded-[12px] hover:bg-main-green transition-all duration-100">
+                            <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="flex items-center space-x-1 bg-dark-green text-white font-medium px-4 py-2 rounded-[12px] hover:bg-main-green transition-all duration-100"
+                            >
                                 <FiPlus className="mr-1" /> Adicionar Despesa
                             </button>
                         </div>
@@ -165,6 +202,12 @@ function Finances() {
                 </div>
             </div>
 
+            {/* Modal */}
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                onSubmit={handleAddTransaction}
+            />
         </div>
     );
 }

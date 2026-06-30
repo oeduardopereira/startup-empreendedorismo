@@ -1,13 +1,32 @@
+import React from "react";
 import { FiCreditCard } from "react-icons/fi";
 import { brlFormatter } from "../../types/types";
 import styles from "./BudgetCard.module.css";
 
-function BudgetCard() {
-    const totalBudget = 5800;
-    const spent = 1750;
+type Transaction = {
+    category: string;
+    icon: React.ReactElement;
+    merchant: string;
+    date: string;
+    status: "VERIFICADO" | "PENDENTE";
+    amount: number;
+};
+
+interface BudgetCardProps {
+    transactions: Transaction[];
+}
+
+const BudgetCard: React.FC<BudgetCardProps> = ({ transactions }) => {
+    const totalBudget = 6000;
+    
+    // Calcula o total gasto (soma valores negativos)
+    const spent = transactions
+        .filter(t => t.amount < 0)
+        .reduce((acc, t) => acc + Math.abs(t.amount), 0);
+    
     const remaining = totalBudget - spent;
-    const dailySafe = (remaining / 20).toFixed(2); // ~20 days left in month
-    const percentage = (remaining / totalBudget) * 100;
+    const dailySafe = (remaining / 20).toFixed(2);
+    const percentage = Math.max(0, (remaining / totalBudget) * 100);
 
     // Circle ring math
     const radius = 70;
@@ -65,6 +84,6 @@ function BudgetCard() {
             </div>
         </div>
     );
-}
+};
 
 export default BudgetCard;
