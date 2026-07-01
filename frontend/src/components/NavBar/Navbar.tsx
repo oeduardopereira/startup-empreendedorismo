@@ -22,7 +22,7 @@ function Navbar() {
         <>
             <div className={styles.navbar}>
                 <div className={styles.title}>
-                    [NOME]
+                    FinDuo
                 </div>
                 <div className="mt-10">
                     <ul className={styles.pagelist}>
