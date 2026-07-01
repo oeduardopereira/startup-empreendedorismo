@@ -9,7 +9,9 @@ function App() {
     return(
         <BrowserRouter>
             <div className="flex bg-bg-blue overflow-hidden">
-                <Navbar />
+                <div className="h-screen w-[230px]">
+                    <Navbar />
+                </div>
                 <div className="flex-col w-[85%]">
                     <div className="w-full">
                         <Topbar />
